@@ -1,6 +1,6 @@
 'use client'
 
-import { Info, LogOut, LucideComputer, Moon, Settings, Sun, User } from 'lucide-react'
+import { ChevronLeft, Info, LogOut, LucideComputer, Moon, Settings, Sun, User } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
@@ -19,13 +19,13 @@ import { SidebarTrigger, useSidebar } from './ui/sidebar'
 const Navbar = () => {
 
     const { setTheme } = useTheme()
-    const { toggleSidebar} = useSidebar()
+    const { state, toggleSidebar } = useSidebar()
     
     return (
         <nav className='flex items-center justify-between py-4'>
             {/* Left */}
-            <SidebarTrigger/>
-            {/* <Button variant="ghost" onClick={toggleSidebar}><ToggleLeftIcon/></Button> */}
+            {/* <SidebarTrigger/> */}
+            <Button variant="ghost" onClick={toggleSidebar}><ChevronLeft className={`ml-auto transition-transform ${state === 'collapsed' ? 'rotate-180' : ''}`} /></Button>
             <h1 className='p-1 text-yellow-600 text-sm font-light bg-yellow-100 border border-yellow-600 rounded-md animate-pulse flex gap-2 items-center'><Info/> Still in development</h1>
             {/* Right */}
             <div className='flex items-center gap-4'>

@@ -43,7 +43,7 @@ export default async function RootLayout({
           attribute="class"
           defaultTheme="system"
           enableSystem
-        //disableTransitionOnChange
+          disableTransitionOnChange
         >
           <SidebarProvider defaultOpen={defaultOpen}>
               <AppSidebar />

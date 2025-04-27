@@ -60,9 +60,9 @@ const AppPiechart = () => {
 
     return (
         <div>
-            <Card data-chart={id} className="flex flex-col">
+            <Card data-chart={id} className="flex flex-col border-none">
                 <ChartStyle id={id} config={chartConfig} />
-                <CardHeader className="flex-row items-start space-y-0 pb-0">
+                <CardHeader className="flex flex-row items-start space-y-0 pb-0">
                     <div className="grid gap-1">
                         <CardTitle>Total Visitors</CardTitle>
                         <CardDescription>January - June 2024</CardDescription>
