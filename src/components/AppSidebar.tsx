@@ -9,6 +9,8 @@ import {
   Plus,
   Projector,
   ChevronDown,
+  User,
+  LogOut,
 } from "lucide-react";
 import {
   Sidebar,
@@ -34,6 +36,8 @@ import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
+  DropdownMenuLabel,
+  DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
 import {
@@ -41,6 +45,7 @@ import {
   CollapsibleContent,
   CollapsibleTrigger,
 } from "./ui/collapsible";
+import { Avatar, AvatarFallback, AvatarImage } from "./ui/avatar";
 
 const items = [
   {
@@ -78,16 +83,18 @@ const AppSidebar = () => {
         <SidebarMenu>
           <SidebarMenuItem>
             <SidebarMenuButton asChild>
-              <Link href="/">
-                <Image src="/globe.svg" alt='Logo' height={20} width={20} />
-                <span>Shadcn Dashboard</span>
+              <Link href="/" className="dark:bg-gray-700">
+                <Image src="/dashboard.svg" alt='Logo' height={20} width={20} />
+                <div>
+                  <span className="font-extralight text-xs">Shadcn/UI powered</span>&nbsp;
+                  <span className="font-medium">Dashboard</span>
+                </div>
               </Link>
             </SidebarMenuButton>
           </SidebarMenuItem>
         </SidebarMenu>
       </SidebarHeader>
 
-      <SidebarSeparator />
       {/* Content */}
       <SidebarContent>
         {/* Group1 */}
@@ -214,13 +221,18 @@ const AppSidebar = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton>
-                  <User2 /> Abdullah <ChevronUp className="ml-auto" />
+                  <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" />
+                    <AvatarFallback>CN</AvatarFallback>
+                  </Avatar> Abdullah <ChevronUp className="ml-auto" />
                 </SidebarMenuButton>
               </DropdownMenuTrigger>
               <DropdownMenuContent align="end">
-                <DropdownMenuItem>Account</DropdownMenuItem>
-                <DropdownMenuItem>Setting</DropdownMenuItem>
-                <DropdownMenuItem>Sign out</DropdownMenuItem>
+                <DropdownMenuLabel>My Account</DropdownMenuLabel>
+                <DropdownMenuSeparator />
+                <DropdownMenuItem><User />Profile</DropdownMenuItem>
+                <DropdownMenuItem><Settings />Settings</DropdownMenuItem>
+                <DropdownMenuItem variant='destructive'><LogOut />Logout</DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>
           </SidebarMenuItem>

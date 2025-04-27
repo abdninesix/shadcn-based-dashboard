@@ -20,6 +20,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Modern Dashboard",
   description: "Dashboard based on Shadcn components",
+  icons: {
+    icon: "/dashboard.svg"
+  }
 };
 
 export default async function RootLayout({
@@ -44,7 +47,7 @@ export default async function RootLayout({
         >
           <SidebarProvider defaultOpen={defaultOpen}>
               <AppSidebar />
-              <main className="w-full duration-300">
+              <main className="w-full p-4 duration-300">
                 <Navbar />
                 {children}
               </main>
