@@ -24,7 +24,7 @@ const Navbar = () => {
         <nav className='flex items-center justify-between p-4'>
             {/* Left */}
             <SidebarTrigger/>
-            <Button variant="ghost" onClick={toggleSidebar}><ToggleLeftIcon/></Button>
+            {/* <Button variant="ghost" onClick={toggleSidebar}><ToggleLeftIcon/></Button> */}
             {/* Right */}
             <div className='flex items-center gap-4'>
                 <Link href="/">Dashboard</Link>
