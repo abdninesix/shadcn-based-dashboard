@@ -86,8 +86,8 @@ const AppSidebar = () => {
               <Link href="/" className="dark:bg-gray-700">
                 <Image src="/dashboard.svg" alt='Logo' height={20} width={20} />
                 <div>
-                  <span className="font-extralight text-xs">Shadcn/UI powered</span>&nbsp;
-                  <span className="font-medium">Dashboard</span>
+                  <span className="font-medium">Dashboard</span>&nbsp;
+                  <span className="font-extralight text-xs">powered by Shadcn/UI</span>
                 </div>
               </Link>
             </SidebarMenuButton>
