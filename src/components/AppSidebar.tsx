@@ -221,7 +221,7 @@ const AppSidebar = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <SidebarMenuButton>
-                  <Avatar>
+                  <Avatar className="size-6">
                     <AvatarImage src="https://github.com/shadcn.png" />
                     <AvatarFallback>CN</AvatarFallback>
                   </Avatar> Abdullah <ChevronUp className="ml-auto" />

@@ -1,6 +1,6 @@
 'use client'
 
-import { LogOut, LucideComputer, Moon, Settings, Sun, ToggleLeftIcon, User } from 'lucide-react'
+import { FileWarning, LogOut, LucideComputer, Moon, Settings, Sun, ToggleLeftIcon, User } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
@@ -26,6 +26,7 @@ const Navbar = () => {
             {/* Left */}
             <SidebarTrigger/>
             {/* <Button variant="ghost" onClick={toggleSidebar}><ToggleLeftIcon/></Button> */}
+            <h1 className='p-1 text-yellow-600 text-sm font-light bg-yellow-100 border border-yellow-600 rounded-md animate-pulse flex gap-2 items-center'><FileWarning/> Features are missing as page is still in development</h1>
             {/* Right */}
             <div className='flex items-center gap-4'>
                 <Link href="/" className='font-medium'>Dashboard</Link>
