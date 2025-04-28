@@ -1,6 +1,6 @@
 'use client'
 
-import { ChevronLeft, Info, LogOut, LucideComputer, Moon, Settings, Sun, User } from 'lucide-react'
+import { LogOut, LucideComputer, Moon, PanelLeftClose, Settings, Sun, User } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
@@ -25,7 +25,7 @@ const Navbar = () => {
         <nav className='flex items-center justify-between py-4 sticky top-0 backdrop-blur-sm z-40'>
             {/* Left */}
             {/* <SidebarTrigger/> */}
-            <Button variant="ghost" onClick={toggleSidebar}><ChevronLeft className={`ml-auto transition-transform ${state === 'collapsed' ? 'rotate-180' : ''}`} /></Button>
+            <Button variant="ghost" onClick={toggleSidebar}><PanelLeftClose className={`ml-auto transition-transform ${state === 'collapsed' ? 'rotate-180' : ''}`} /></Button>
             <Link href="/" className='font-medium'>Dashboard</Link>
             {/* Right */}
             <div className='flex items-center gap-4'>
