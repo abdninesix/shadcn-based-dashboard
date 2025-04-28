@@ -20,16 +20,15 @@ const Navbar = () => {
 
     const { setTheme } = useTheme()
     const { state, toggleSidebar } = useSidebar()
-    
+
     return (
-        <nav className='flex items-center justify-between py-4'>
+        <nav className='flex items-center justify-between py-4 sticky top-0 backdrop-blur-sm z-40'>
             {/* Left */}
             {/* <SidebarTrigger/> */}
             <Button variant="ghost" onClick={toggleSidebar}><ChevronLeft className={`ml-auto transition-transform ${state === 'collapsed' ? 'rotate-180' : ''}`} /></Button>
-            <h1 className='p-1 text-yellow-600 text-sm font-light bg-yellow-100 border border-yellow-600 rounded-md animate-pulse flex gap-2 items-center'><Info/> Still in development</h1>
+            <Link href="/" className='font-medium'>Dashboard</Link>
             {/* Right */}
             <div className='flex items-center gap-4'>
-                <Link href="/" className='font-medium'>Dashboard</Link>
 
                 <DropdownMenu>
                     <DropdownMenuTrigger asChild>
