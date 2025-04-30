@@ -39,7 +39,7 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex`}
       >
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
           <SidebarProvider defaultOpen={defaultOpen}>
               <AppSidebar />
               <main className="w-full p-4 duration-300">
