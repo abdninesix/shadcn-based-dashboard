@@ -56,7 +56,7 @@ const Navbar = () => {
                     <DropdownMenuContent>
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
-                        <DropdownMenuItem><User />Profile</DropdownMenuItem>
+                        <DropdownMenuItem><User /><Link href="/users/user">Profile</Link></DropdownMenuItem>
                         <DropdownMenuItem><Settings />Settings</DropdownMenuItem>
                         <DropdownMenuItem variant='destructive'><LogOut />Logout</DropdownMenuItem>
                     </DropdownMenuContent>
