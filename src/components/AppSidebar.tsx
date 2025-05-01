@@ -11,6 +11,7 @@ import {
   ChevronDown,
   User,
   LogOut,
+  Banknote,
 } from "lucide-react";
 import {
   Sidebar,
@@ -231,6 +232,7 @@ const AppSidebar = () => {
                 <DropdownMenuLabel>My Account</DropdownMenuLabel>
                 <DropdownMenuSeparator />
                 <DropdownMenuItem><User /><Link href="/users/user">Profile</Link></DropdownMenuItem>
+                <DropdownMenuItem><Banknote /><Link href="/payments">Payments</Link></DropdownMenuItem>
                 <DropdownMenuItem><Settings />Settings</DropdownMenuItem>
                 <DropdownMenuItem variant='destructive'><LogOut />Logout</DropdownMenuItem>
               </DropdownMenuContent>

@@ -1,6 +1,7 @@
 import React from 'react'
 import { columns, Payment } from './columns'
 import { DataTable } from './data-table';
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList, BreadcrumbPage, BreadcrumbSeparator } from '@/components/ui/breadcrumb';
 
 const getData = async (): Promise<Payment[]> => {
   return [
@@ -265,7 +266,18 @@ const PaymentsPage = async () => {
 
   return (
     <div>
-      <div className='mb-8 p-2 bg-primary-foreground rounded-md'>
+      <Breadcrumb>
+        <BreadcrumbList>
+          <BreadcrumbItem>
+            <BreadcrumbLink href="/">Dashboard</BreadcrumbLink>
+          </BreadcrumbItem>
+          <BreadcrumbSeparator />
+          <BreadcrumbItem>
+            <BreadcrumbPage>Payments</BreadcrumbPage>
+          </BreadcrumbItem>
+        </BreadcrumbList>
+      </Breadcrumb>
+      <div className='mt-5 mb-8 p-2 bg-primary-foreground rounded-md'>
         <h1 className='font-semibold'>All Payments</h1>
       </div>
       <DataTable columns={columns} data={data} />

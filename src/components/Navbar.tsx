@@ -1,6 +1,6 @@
 'use client'
 
-import { LogOut, LucideComputer, Moon, PanelLeftClose, Settings, Sun, User } from 'lucide-react'
+import { Banknote, LogOut, LucideComputer, Moon, PanelLeftClose, Settings, Sun, User } from 'lucide-react'
 import Link from 'next/link'
 import React from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar'
@@ -15,18 +15,32 @@ import {
 import { Button } from './ui/button'
 import { useTheme } from 'next-themes'
 import { SidebarTrigger, useSidebar } from './ui/sidebar'
+import { usePathname } from 'next/navigation'
 
 const Navbar = () => {
 
     const { setTheme } = useTheme()
     const { state, toggleSidebar } = useSidebar()
+    const pathname = usePathname()
+
+    let pageTitle = "Default Title"; // Default title
+
+    if (pathname === "/") {
+        pageTitle = "Dashboard";
+    } else if (pathname.startsWith("/users/")) {
+        pageTitle = "Profile";
+    } else if (pathname === "/payments") {
+        pageTitle = "Payments";
+    } else {
+        pageTitle = pathname.charAt(1).toUpperCase() + pathname.slice(2); // Capitalize pathname
+    }
 
     return (
         <nav className='flex items-center justify-between py-4 sticky top-0 backdrop-blur-sm z-40'>
             {/* Left */}
             {/* <SidebarTrigger/> */}
             <Button variant="ghost" onClick={toggleSidebar}><PanelLeftClose className={`ml-auto transition-transform ${state === 'collapsed' ? 'rotate-180' : ''}`} /></Button>
-            <Link href="/" className='font-medium'>Dashboard</Link>
+            <span className='font-medium'>{pageTitle}</span>
             {/* Right */}
             <div className='flex items-center gap-4'>
 
@@ -57,6 +71,7 @@ const Navbar = () => {
                         <DropdownMenuLabel>My Account</DropdownMenuLabel>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem><User /><Link href="/users/user">Profile</Link></DropdownMenuItem>
+                        <DropdownMenuItem><Banknote /> <Link href="/payments">Payments</Link></DropdownMenuItem>
                         <DropdownMenuItem><Settings />Settings</DropdownMenuItem>
                         <DropdownMenuItem variant='destructive'><LogOut />Logout</DropdownMenuItem>
                     </DropdownMenuContent>
