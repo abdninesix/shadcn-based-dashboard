@@ -15,6 +15,8 @@ const page = () => {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
+
+      <div className='mt-5'>Nothing here</div>
     </div>
   )
 }

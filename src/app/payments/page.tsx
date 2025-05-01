@@ -265,7 +265,7 @@ const PaymentsPage = async () => {
   const data = await getData();
 
   return (
-    <div>
+    <div className='space-y-5'>
       <Breadcrumb>
         <BreadcrumbList>
           <BreadcrumbItem>
@@ -277,9 +277,6 @@ const PaymentsPage = async () => {
           </BreadcrumbItem>
         </BreadcrumbList>
       </Breadcrumb>
-      <div className='mt-5 mb-8 p-2 bg-primary-foreground rounded-md'>
-        <h1 className='font-semibold'>All Payments</h1>
-      </div>
       <DataTable columns={columns} data={data} />
     </div>
   )
